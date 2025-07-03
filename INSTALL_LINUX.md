@@ -97,8 +97,8 @@ pip install "numpy>=1.19.5,<1.20.0"
 # 2. 安装PyTorch 1.13.0
 pip install torch==1.13.0 torchvision==0.14.0 --index-url https://download.pytorch.org/whl/cpu
 
-# 3. 安装TensorFlow 2.1.4
-pip install tensorflow==2.1.4
+# 3. 安装TensorFlow 2.1.3
+pip install tensorflow==2.1.3
 
 # 4. 安装ONNX相关
 pip install "onnx>=1.12.0,<1.15.0"
@@ -127,7 +127,7 @@ python test_installation.py
 预期输出：
 ```
 ✓ PyTorch版本: 1.13.0
-✓ TensorFlow版本: 2.1.4
+✓ TensorFlow版本: 2.1.3
 ✓ 自定义转换器模块导入成功
 🎉 所有测试通过！项目安装成功。
 ```
@@ -174,7 +174,7 @@ pip install protobuf==3.20.3
 ### 问题4：NumPy版本不兼容
 
 ```bash
-# TensorFlow 2.1.4需要特定的NumPy版本
+# TensorFlow 2.1.3需要特定的NumPy版本
 pip install "numpy>=1.19.5,<1.20.0"
 ```
 
@@ -193,8 +193,8 @@ pip install torch==1.13.0+cu116 torchvision==0.14.0+cu116 --extra-index-url http
 ### 安装GPU版本TensorFlow（如果有CUDA）
 
 ```bash
-# TensorFlow 2.1.4的GPU版本
-pip install tensorflow-gpu==2.1.4
+# TensorFlow 2.1.3的GPU版本
+pip install tensorflow-gpu==2.1.3
 ```
 
 ## 7. 环境管理脚本
@@ -229,7 +229,7 @@ source activate_env.sh
 | 组件 | Mac版本 | Linux版本 | 说明 |
 |------|---------|-----------|------|
 | Python | 3.8 | **3.7** | 恢复原始要求 |
-| TensorFlow | 2.13.0 | **2.1.4** | 恢复原始要求 |
+| TensorFlow | 2.13.0 | **2.1.3** | 恢复原始要求 |
 | PyTorch | 1.13.0 | **1.13.0** | 保持一致 |
 | 环境管理 | conda | **venv** | 使用Python标准库 |
 

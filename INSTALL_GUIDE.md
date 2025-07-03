@@ -29,20 +29,21 @@ pip install -r requirements_mac_arm.txt
 ```bash
 # 核心深度学习框架
 pip install torch==1.13.0
-pip install tensorflow==2.13.0
+pip install tensorflow==2.1.3
 
 # ONNX相关
-pip install "onnx>=1.12.0"
-pip install "onnxruntime>=1.12.0"
+pip install "onnx>=1.4.0,<1.13.0"
+pip install "onnxruntime>=1.0.0,<1.13.0"
 
 # 转换工具
-pip install "tf2onnx>=1.9.0"
-pip install onnx-tf
-pip install tensorflow-probability
+pip install "tf2onnx>=1.5.0,<1.10.0"
+pip install "onnx-tf>=1.5.0,<1.10.0"
 
 # 其他依赖
-pip install "numpy>=1.19.5"
-pip install "protobuf>=3.20.0"
+pip install "numpy>=1.19.2,<1.20.0"
+pip install "protobuf>=3.8.0,<4.0.0"
+pip install "h5py>=2.10.0,<3.0.0"
+pip install "scipy>=1.5.0,<1.8.0"
 ```
 
 ## 3. 验证安装
@@ -69,7 +70,7 @@ python examples/convert_example.py
 | 组件 | 原始要求 | ARM Mac实际版本 | 原因 |
 |------|----------|----------------|------|
 | Python | 3.7 | 3.8 | Python 3.7在ARM Mac conda中不可用 |
-| TensorFlow | 2.1.x | 2.13.0 | TensorFlow 2.1.x不支持Apple Silicon |
+| TensorFlow | 2.1.3 | 2.1.3 | TensorFlow 2.1.3对Apple Silicon支持有限 |
 
 ### 核心功能兼容性
 

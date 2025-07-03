@@ -4,7 +4,7 @@
 
 本项目现已完全支持Linux环境，使用原始要求的版本配置：
 - **Python 3.7** (精确版本要求)
-- **TensorFlow 2.1.4** (与已有模型兼容)
+- **TensorFlow 2.1.3** (与已有模型兼容)
 - **PyTorch 1.13.0** (保持一致)
 - **虚拟环境** (venv，不使用conda)
 
@@ -57,7 +57,7 @@ python test_installation_linux.py
 | `test_installation_linux.py` | Linux环境测试脚本 |
 | `setup_linux.sh` | 一键安装脚本 |
 | `activate_linux.sh` | 环境激活脚本（自动生成） |
-| `converter/torch_to_tf_v21.py` | TensorFlow 2.1.4兼容转换器 |
+| `converter/torch_to_tf_v21.py` | TensorFlow 2.1.3兼容转换器 |
 
 ### 智能版本选择
 
@@ -190,20 +190,20 @@ sudo ./setup_linux.sh  # 不推荐，建议使用用户权限
 | 环境 | Python | TensorFlow | PyTorch | 环境管理 | 状态 |
 |------|--------|------------|---------|----------|------|
 | **Mac (ARM)** | 3.8 | 2.13.0 | 1.13.0 | conda | ✅ 已验证 |
-| **Linux** | **3.7** | **2.1.4** | 1.13.0 | venv | ✅ 新增 |
+| **Linux** | **3.7** | **2.1.3** | 1.13.0 | venv | ✅ 新增 |
 
 ## 🎯 使用建议
 
 ### 开发环境
 
 - **Mac用户**：使用conda环境，版本为Python 3.8 + TensorFlow 2.13.0
-- **Linux用户**：使用venv环境，版本为Python 3.7 + TensorFlow 2.1.4
+- **Linux用户**：使用venv环境，版本为Python 3.7 + TensorFlow 2.1.3
 - **生产环境**：建议使用Linux环境以确保与已有模型的最佳兼容性
 
 ### 模型兼容性
 
 - **新模型开发**：可以使用Mac环境（TensorFlow 2.13.0）
-- **已有模型转换**：使用Linux环境（TensorFlow 2.1.4）确保兼容性
+- **已有模型转换**：使用Linux环境（TensorFlow 2.1.3）确保兼容性
 - **跨平台部署**：项目自动检测版本，无需修改代码
 
 ## 📞 支持

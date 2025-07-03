@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Linux环境 - 项目安装和基本功能测试脚本 (TensorFlow 2.1.4)
+Linux环境 - 项目安装和基本功能测试脚本 (TensorFlow 2.1.3)
 """
 
 import sys
@@ -84,12 +84,12 @@ def test_imports():
     
     # 测试自定义模块
     try:
-        # 尝试使用TensorFlow 2.1.4兼容版本
+        # 尝试使用TensorFlow 2.1.3兼容版本
         if os.path.exists('converter/torch_to_tf_v21.py'):
             sys.path.insert(0, '.')
             from converter.torch_to_tf_v21 import TorchToTensorFlowConverter
             from converter.model_utils import ModelUtils
-            print("✓ 自定义转换器模块导入成功 (TensorFlow 2.1.4兼容版)")
+            print("✓ 自定义转换器模块导入成功 (TensorFlow 2.1.3兼容版)")
             import_results['custom'] = True
         else:
             from converter import TorchToTensorFlowConverter, ModelUtils
@@ -102,8 +102,8 @@ def test_imports():
     return all(import_results.values())
 
 def test_tensorflow_compatibility():
-    """测试TensorFlow 2.1.4特定功能"""
-    print("\n测试TensorFlow 2.1.4兼容性...")
+    """测试TensorFlow 2.1.3特定功能"""
+    print("\n测试TensorFlow 2.1.3兼容性...")
     try:
         import tensorflow as tf
         import numpy as np
@@ -113,7 +113,7 @@ def test_tensorflow_compatibility():
         y = tf.matmul(x, x)
         print("✓ TensorFlow基本张量操作正常")
         
-        # 测试SavedModel功能 (TensorFlow 2.1.4特有)
+        # 测试SavedModel功能 (TensorFlow 2.1.3特有)
         @tf.function
         def simple_function(x):
             return tf.add(x, 1)
@@ -231,7 +231,7 @@ def main():
     """主测试函数"""
     print("=" * 60)
     print("Linux环境 - Torch2Tensorflow 项目测试")
-    print("目标版本: Python 3.7 + TensorFlow 2.1.4 + PyTorch 1.13.0")
+    print("目标版本: Python 3.7 + TensorFlow 2.1.3 + PyTorch 1.13.0")
     print("=" * 60)
     
     # 打印环境信息

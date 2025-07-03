@@ -13,12 +13,12 @@ def _get_converter_class():
         import tensorflow as tf
         tf_version = tf.__version__
         
-        # 检查是否存在TensorFlow 2.1.4兼容版本
+        # 检查是否存在TensorFlow 2.1.3兼容版本
         if os.path.exists(os.path.join(os.path.dirname(__file__), 'torch_to_tf_v21.py')):
             if tf_version.startswith('2.1'):
-                # 使用TensorFlow 2.1.4兼容版本
+                # 使用TensorFlow 2.1.3兼容版本
                 from .torch_to_tf_v21 import TorchToTensorFlowConverter
-                print(f"使用TensorFlow 2.1.4兼容转换器 (TF版本: {tf_version})")
+                print(f"使用TensorFlow 2.1.3兼容转换器 (TF版本: {tf_version})")
                 return TorchToTensorFlowConverter
         
         # 使用通用版本

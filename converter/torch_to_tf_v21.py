@@ -1,5 +1,5 @@
 """
-PyTorch到TensorFlow模型转换器 - TensorFlow 2.1.4兼容版本
+PyTorch到TensorFlow模型转换器 - TensorFlow 2.1.3兼容版本
 """
 
 import torch
@@ -13,7 +13,7 @@ import numpy as np
 
 class TorchToTensorFlowConverter:
     """
-    PyTorch模型到TensorFlow模型的转换器 (TensorFlow 2.1.4兼容)
+    PyTorch模型到TensorFlow模型的转换器 (TensorFlow 2.1.3兼容)
     """
     
     def __init__(self):
@@ -62,7 +62,7 @@ class TorchToTensorFlowConverter:
     def convert_via_onnx(self, output_path: str, input_names: list = None, 
                         output_names: list = None, opset_version: int = 11) -> bool:
         """
-        通过ONNX中间格式转换模型 (TensorFlow 2.1.4兼容)
+        通过ONNX中间格式转换模型 (TensorFlow 2.1.3兼容)
         
         Args:
             output_path: TensorFlow模型输出路径
@@ -106,10 +106,10 @@ class TorchToTensorFlowConverter:
             onnx.checker.check_model(onnx_model)
             print("ONNX模型验证成功")
             
-            # Step 2: ONNX -> TensorFlow (TensorFlow 2.1.4兼容)
+            # Step 2: ONNX -> TensorFlow (TensorFlow 2.1.3兼容)
             print("步骤2: 将ONNX模型转换为TensorFlow...")
             
-            # 使用onnx-tf进行转换 (TensorFlow 2.1.4兼容)
+            # 使用onnx-tf进行转换 (TensorFlow 2.1.3兼容)
             try:
                 from onnx_tf.backend import prepare
                 
@@ -117,7 +117,7 @@ class TorchToTensorFlowConverter:
                 onnx_model = onnx.load(onnx_path)
                 tf_rep = prepare(onnx_model)
                 
-                # 保存TensorFlow模型 (兼容TensorFlow 2.1.4)
+                # 保存TensorFlow模型 (兼容TensorFlow 2.1.3)
                 tf_rep.export_graph(output_path)
                 
             except ImportError:
@@ -142,7 +142,7 @@ class TorchToTensorFlowConverter:
         try:
             # 注意：tf2onnx主要用于TF->ONNX，这里是实验性的反向使用
             print("使用实验性tf2onnx反向转换...")
-            # 这个方法在TensorFlow 2.1.4中可能不可用
+            # 这个方法在TensorFlow 2.1.3中可能不可用
             return False
         except Exception as e:
             print(f"tf2onnx转换失败: {e}")
@@ -150,7 +150,7 @@ class TorchToTensorFlowConverter:
     
     def validate_conversion(self, tf_model_path: str, test_inputs: np.ndarray = None) -> bool:
         """
-        验证转换结果 (TensorFlow 2.1.4兼容)
+        验证转换结果 (TensorFlow 2.1.3兼容)
         
         Args:
             tf_model_path: TensorFlow模型路径
@@ -160,12 +160,12 @@ class TorchToTensorFlowConverter:
             bool: 验证是否通过
         """
         try:
-            # 加载TensorFlow模型 (TensorFlow 2.1.4兼容)
+            # 加载TensorFlow模型 (TensorFlow 2.1.3兼容)
             tf_model = tf.saved_model.load(tf_model_path)
             
             # 获取模型的推理函数
             if hasattr(tf_model, 'signatures'):
-                # TensorFlow 2.1.4中的SignatureDef方式
+                # TensorFlow 2.1.3中的SignatureDef方式
                 if 'serving_default' in tf_model.signatures:
                     infer_func = tf_model.signatures['serving_default']
                 else:
@@ -188,7 +188,7 @@ class TorchToTensorFlowConverter:
                 torch_input = torch.from_numpy(test_inputs)
                 torch_output = self.torch_model(torch_input).numpy()
             
-            # TensorFlow推理 (TensorFlow 2.1.4兼容)
+            # TensorFlow推理 (TensorFlow 2.1.3兼容)
             try:
                 if hasattr(infer_func, 'structured_outputs'):
                     # 使用signature方式调用

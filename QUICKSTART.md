@@ -68,7 +68,7 @@ if success:
 ## 支持的版本
 
 - PyTorch: 1.13.0
-- TensorFlow: 2.1.4
+- TensorFlow: 2.1.3
 - Python: 3.7+
 
 ## 常见问题

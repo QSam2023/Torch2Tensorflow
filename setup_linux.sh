@@ -105,7 +105,7 @@ install_dependencies() {
         pip install torch==1.13.0 torchvision==0.14.0 --index-url https://download.pytorch.org/whl/cpu
         
         print_info "3. 安装TensorFlow..."
-        pip install tensorflow==2.1.4
+        pip install tensorflow==2.1.3
         
         print_info "4. 安装ONNX相关..."
         pip install "onnx>=1.12.0,<1.15.0"
