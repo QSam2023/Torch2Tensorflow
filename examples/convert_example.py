@@ -38,7 +38,7 @@ def create_and_convert_sample_model():
     # 保存PyTorch模型
     pytorch_model_path = "models/sample_cnn.pth"
     os.makedirs("models", exist_ok=True)
-    ModelUtils.save_pytorch_model(model, pytorch_model_path)
+    ModelUtils.save_pytorch_model(model, pytorch_model_path, save_state_dict_only=False)
     
     # 创建转换器
     print("\n=== 开始转换 ===")
@@ -99,7 +99,7 @@ def create_and_convert_mlp_model():
     
     # 保存模型
     pytorch_model_path = "models/sample_mlp.pth"
-    ModelUtils.save_pytorch_model(model, pytorch_model_path)
+    ModelUtils.save_pytorch_model(model, pytorch_model_path, save_state_dict_only=False)
     
     # 转换模型
     print("\n=== 转换MLP模型 ===")
